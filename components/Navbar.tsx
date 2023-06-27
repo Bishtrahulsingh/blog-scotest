@@ -4,7 +4,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between py-6">
+    <div className="flex items-center justify-between py-3">
         <Link href={'/'}>
             <div className='cursor-pointer'>
                 <Image width={40} height={40} alt="logo" src={'/techlogo/png/logo-no-background.png'}/>

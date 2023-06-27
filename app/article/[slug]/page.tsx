@@ -58,9 +58,9 @@ const page = async() => {
                     </span>
                     </span>
                 </div>
-                <div className='text-lg text-gray-600 leading-8'>
+                <div className='text-gray-600 leading-8 text-justify'>
                     <img 
-                    className='w-full my-12 mb-6'
+                    className='my-12 mb-6 w-full'
                     src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${article.data[0].attributes.image.data.attributes.url}`} alt="mainimg" />
                     <MDXRemote
                             {...narticle}

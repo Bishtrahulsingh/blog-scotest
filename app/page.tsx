@@ -48,7 +48,7 @@ const Home: NextPage<IPropTypes> = async () => {
   const pagecount = articles.meta.pagination.pageCount;
 
   return (
-        <div className="md:pb-40"> 
+        <div className="md:pb-5"> 
             <Head>  
                 <title>Homepage</title>
                 <meta

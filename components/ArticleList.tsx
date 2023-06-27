@@ -8,7 +8,7 @@ interface IPropType{
 
 const ArticleList = ({articles}:IPropType) => {
   return (
-    <div className=' px-2 md:px-0 lg:grid lg:grid-cols-2 lg:gap-10'>
+    <div className='px-2 md:px-0 lg:grid lg:grid-cols-2 lg:gap-10'>
         {articles.map((article,idx)=>{
             return (
                 <div className='my-7 lg:my-3' key={article.id}>

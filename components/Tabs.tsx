@@ -24,7 +24,7 @@ const Tabs = ({ categories }: IPropType) => {
             <ul className="hidden md:flex md:items-center">
                 <li
                     className={
-                        'mr-6 pb-6 border-b-4 rounded-sm ' +
+                        'mr-6 pb-6 border-b-4 rounded-sm hover:text-gray-200 ' +
                         `${
                             route === '/'
                                 ? 'border-primary text-primary'
@@ -38,7 +38,7 @@ const Tabs = ({ categories }: IPropType) => {
                         <li
                             key={category.id}
                             className={
-                                'mr-6 pb-6 border-b-4 rounded-sm ' +
+                                'mr-6 pb-6 border-b-4 rounded-sm hover:text-gray-300 ' +
                                 `${
                                     isActiveLink(category)
                                         ? 'border-primary text-primary'
