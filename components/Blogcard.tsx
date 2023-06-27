@@ -35,7 +35,7 @@ const Blogcard = ({ article }: IPropType) => {
           </span>
         </span>
       </div>
-      <div className='text-gray-500 '>
+      <div className='text-gray-500 text-justify '>
         {article.attributes.shortDescription.slice(0,210)} ...
       </div>
     </div>
