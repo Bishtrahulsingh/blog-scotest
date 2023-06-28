@@ -10,12 +10,8 @@ import Head from "next/head";
 import { useRouter, useSearchParams } from "next/navigation";
 import qs from "qs"; 
 
-interface IPropTypes{
-    categories: {
-        items:ICategory[];
-    };
-}  
-const Home: NextPage<IPropTypes> = async () => {    
+ 
+const Home = async () => {    
   const router = useRouter();   
   const searchparam = useSearchParams().get('search')|| ""; 
   let query:number = Number(useSearchParams().get('page'));
