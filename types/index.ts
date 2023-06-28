@@ -54,7 +54,7 @@ export interface IAuthor{
             firstname:string;
             lastname:string;
             avatar:{
-                data:{
+                data:[{
                     attributes:{
                         formats:{
                             thumbnail:{
@@ -62,7 +62,7 @@ export interface IAuthor{
                             }
                         }
                     }
-                }
+                }]
             }
         }
     }

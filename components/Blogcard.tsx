@@ -8,7 +8,7 @@ interface IPropType{
   article: IArticle;
 }
 const Blogcard = ({ article }: IPropType) => {
-
+  
   return (
     <div>
       <Link href={`/article/${article.attributes.slug}`}>
@@ -19,10 +19,10 @@ const Blogcard = ({ article }: IPropType) => {
       <div className='flex items-center my-4'>
         <div className='rounded-lg overflow-hidden flex items-center justify-center mr-2'>
 
-          <Image alt='userimg' 
+          <Image alt='userimg'
             height={25}
             width={25} 
-            src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${article.attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}`
+            src={`${article.attributes.author.data.attributes.avatar.data[0].attributes.formats.thumbnail.url}`
             }/>
 
         </div>

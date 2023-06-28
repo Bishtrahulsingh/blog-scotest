@@ -41,11 +41,11 @@ const page = async() => {
                 <h1 className='text-2xl font-bold py-2'>{article.data[0].attributes.Title}</h1>
                 <div className='flex items-center my-4'>
                     <div className='rounded-lg overflow-hidden flex items-center justify-center mr-2'>
-
+                        
                     <Image alt='userimg' 
                         height={25}
                         width={25} 
-                        src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${article.data[0].attributes.author.data.attributes.avatar.data.attributes.formats.thumbnail.url}`
+                        src={`${article.data[0].attributes.author.data.attributes.avatar.data[0].attributes.formats.thumbnail.url}`
                         }/>
 
                     </div>
@@ -61,7 +61,7 @@ const page = async() => {
                 <div className='text-gray-600 leading-8 text-justify'>
                     <img 
                     className='my-12 mb-6 w-full'
-                    src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${article.data[0].attributes.image.data.attributes.url}`} alt="mainimg" />
+                    src={`${article.data[0].attributes.image.data.attributes.url}`} alt="mainimg" />
                     <MDXRemote
                             {...narticle}
                             components={{}}
