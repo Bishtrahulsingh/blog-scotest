@@ -10,10 +10,7 @@ import { formatDate} from '@/utils'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 
-export const metadata = { 
-    title:'TechBlog/article ',
-    description: 'this is an article contains information about javascript, react , nodejs etc',
-}
+
 const page = async() => {
     let notfound = false;
     const slug = useParams();

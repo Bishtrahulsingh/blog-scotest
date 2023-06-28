@@ -10,10 +10,6 @@ import { useParams, useSearchParams } from 'next/navigation';
 import ArticleList from '@/components/ArticleList';
 import Pagination from '@/components/Pagination';
 
-export const metadata = { 
-  title:'TechBlog/category/articles ',
-  description: 'these are articles contains information about javascript, react , nodejs etc',
-}
 
 const Categoryname =async () => {
   const searchparam = useSearchParams().get('search')|| ""; 
