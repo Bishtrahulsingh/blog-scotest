@@ -3,8 +3,7 @@ import React from 'react'
 
 const Footer = () => { 
   return (
-    <div className=' text-gray-600 bg-white w-full'>
-
+    <div className=' text-gray-600 bg-white w-full mb-32 md:mb-0'>
       <div className='container mx-auto flex items-center flex-col sm:flex-row py-8'>
         <a href="/" className='flex items-center justify-center md:justify-start'>
           <Image alt='logo' width={35} height={35} src="/techlogo/png/logo-no-background.png"></Image>

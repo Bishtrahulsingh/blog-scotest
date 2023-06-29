@@ -1,73 +1,7 @@
-'use client'
-import { fetchArticleBySlug } from '@/http'
-import { IArticle, ICollectionResponse } from '@/types'
-import { AxiosResponse } from 'axios'
-import React from 'react'
-import qs from 'qs';
-import { useParams } from 'next/navigation';
-import Image from 'next/image'
-import { formatDate} from '@/utils'
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
-
-
-const page = async() => {
-    let notfound = false;
-    const slug = useParams();
-    const queryString = qs.stringify({
-        populate:["image",'author.avatar'],
-        filters:{
-            slug:{
-                $eq:slug.slug
-            }
-        }
-    })
-    const{data:article}:AxiosResponse<ICollectionResponse<IArticle[]>> = await fetchArticleBySlug(queryString);
-    if(article.data.length === 0){
-        notfound = true;
-    }
-    const narticle:any = await serialize(article.data[0].attributes.body,{
-        mdxOptions:{
-            development:process.env.NODE_ENV==='development',
-        }
-    });
+const page = () => {
   return (
-    <div>
-        <div className='my-12 grid lg:grid-cols-3 gap-12 singleArticle'>
-            <div className='col-span-2 '>
-                <h1 className='text-2xl font-bold py-2'>{article.data[0].attributes.Title}</h1>
-                <div className='flex items-center my-4'>
-                    <div className='rounded-lg overflow-hidden flex items-center justify-center mr-2'>
-                        
-                    <Image alt='userimg' 
-                        height={25}
-                        width={25} 
-                        src={`${article.data[0].attributes.author.data.attributes.avatar.data[0].attributes.formats.thumbnail.url}`
-                        }/>
-
-                    </div>
-                    <span className='text-sm font-bold text-gray-600'>
-                    {article.data[0].attributes.author.data.attributes.firstname}{' '}
-                    {article.data[0].attributes.author.data.attributes.lastname} on &nbsp;
-
-                    <span className='text-gray-400 '>
-                        {formatDate(article.data[0].attributes.createdAt)}
-                    </span>
-                    </span>
-                </div>
-                <div className='text-gray-600 leading-8 text-justify'>
-                    <img 
-                    className='my-12 mb-6 w-auto'
-                    src={`${article.data[0].attributes.image.data.attributes.url}`} alt="mainimg" />
-                    <MDXRemote 
-                            {...narticle}
-                            components={{}}
-                        />
-                </div>
-            </div>
-            
-            <div> 
-            <div className="sticky top-0">
+    <div className="mt-[10vh]">
+        <div className="md:w-[50vw] ">
                     <h2 className="font-bold text-gray-600 text-lg">
                         Signup to our newsletter
                     </h2>
@@ -75,15 +9,15 @@ const page = async() => {
                         Get the latest article on all things data delivered
                         straight to your inbox
                     </p>
-                    <input
-                        className="border w-full p-2 pl-3 my-6 outline-primary"
-                        type="email"
-                        placeholder="Your work email"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                    />
-                    <button className="border-2 border-primary rounded py-1 px-6 text-primary font-bold active:text-primaryDark">
-                        Subscribe
-                    </button>
+                    <form action="">
+                        <input
+                            className="border w-full p-2 pl-3 my-6 outline-primary"
+                            type="email"
+                            placeholder="Your work email"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        />
+                        <input type="submit" className="border-2 border-primary rounded py-1 px-6 text-primary font-bold active:text-primaryDark"/>
+                    </form>
                     <hr className="my-6 border-gray-100" />
                     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                         <span className="text-gray-500 mr-2">Share</span>
@@ -150,8 +84,6 @@ const page = async() => {
                     </span>
                     <hr className="my-6 border-gray-100" />
                 </div>
-            </div>
-        </div>
     </div>
   )
 }

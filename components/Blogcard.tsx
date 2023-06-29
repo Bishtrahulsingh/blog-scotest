@@ -36,7 +36,9 @@ const Blogcard = ({ article }: IPropType) => {
         </span>
       </div>
       <div className='text-gray-500 text-justify '>
+      <Link href={`/article/${article.attributes.slug}`}>
         {article.attributes.shortDescription.slice(0,210)} ...
+      </Link>
       </div>
     </div>
   )

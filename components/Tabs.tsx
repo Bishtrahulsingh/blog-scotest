@@ -69,6 +69,41 @@ const Tabs = ({ categories }: IPropType) => {
                     className="outline-none px-2 py-1 ml-1"
                 />
             </div>
+            {/* navbar for mobile user */}
+            <div className='flex items-center z-10 justify-center  border-gray-100 flex-nowrap overflow-x-scroll fixed bottom-0 left-0 w-full bg-slate-900 pt-5'>
+            <ul className="flex flex-nowrap md:hidden items-center justify-between w-full">
+                <li
+                    className={
+                        'ml-[5vw] mr-[5vw] pb-4 border-b-4 text-xs rounded-sm hover:text-gray-200 ' +
+                        `${
+                            route === '/'
+                                ? 'border-primary text-primary'
+                                : 'border-slate-900 text-gray-400'
+                        }`
+                    }> 
+                    <Link href="/">Recent</Link>
+                </li>
+                {categories.map((category) => {
+                    return (
+                        <li
+                            key={category.id}
+                            className={
+                                'mr-[5vw] flex flex-nowrap pb-4 border-b-4 text-xs rounded-sm hover:text-gray-300 ' +
+                                `${
+                                    isActiveLink(category)
+                                        ? 'border-primary text-primary'
+                                        : 'border-slate-900 text-gray-400'
+                                }`
+                            }>
+                            <Link
+                                href={`/category/${category.attributes.slug}`}>
+                                {category.attributes.Title}
+                            </Link>
+                        </li>   
+                    );
+                })}
+            </ul>
+            </div>
         </div>
     );
 };

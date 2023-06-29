@@ -26,7 +26,7 @@ const Navbar = () => {
         </ul>
         <ul className="flex items-center">
           <li className="font-medium text-gray-600">
-            <a href="#" className="bg-primary py-2 px-4 rounded-sm  text-white hover:bg-primaryDark transition-all">
+            <a href="/subscribe" className="bg-primary py-2 px-4 rounded-sm  text-white hover:bg-primaryDark transition-all">
               Subscribe
             </a>
           </li>
