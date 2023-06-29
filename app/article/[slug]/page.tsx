@@ -55,11 +55,11 @@ const page = async() => {
                     </span>
                     </span>
                 </div>
-                <div className='text-gray-600 leading-8 text-justify'>
+                <div className='text-gray-600 leading-8 text-justify flex flex-col items-center'>
                     <img 
-                    className='my-12 mb-6 w-full'
+                    className='my-12 mb-6 w-auto'
                     src={`${article.data[0].attributes.image.data.attributes.url}`} alt="mainimg" />
-                    <MDXRemote
+                    <MDXRemote 
                             {...narticle}
                             components={{}}
                         />
