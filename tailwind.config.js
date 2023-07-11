@@ -13,8 +13,8 @@ module.exports = {
       colors:{
         primary:"#895fff",
         primaryDark:"#280095",
-        primarytxt:"#53ff0f",
-        primarycode:"#858585"
+        primarytxt:"#a9f743",
+        primarycode:"#1f2024"
       },
     },
   },
