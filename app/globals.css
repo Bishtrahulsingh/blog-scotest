@@ -26,9 +26,13 @@
     @apply text-xs font-bold py-2;
   }
   .singleArticle pre{
-    @apply text-primarytxt text-xs lg:text-sm bg-primarycode my-6 p-12 overflow-x-scroll w-[88vw] lg:w-full;
+    @apply text-primarytxt text-xs lg:text-sm bg-primarycode my-6 p-12 overflow-x-scroll w-[88vw] lg:w-full rounded-md;
   }
   .singleArticle blockquote{
     @apply my-4 p-4 border-l-4 bg-gray-100 text-gray-500 border-primaryDark;
+  }
+
+  .singleArticle a{
+    @apply text-blue-800 underline;
   }
 }
